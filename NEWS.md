@@ -1,3 +1,7 @@
+# orderly 1.1.2
+
+* The first of `usethis` inspired functions `orderly::orderly_use_resource()` which can add a resource into the orderly.yml (VIMC-3503)
+
 # orderly 1.1.1
 
 * Dependencies can be resolved as if they were to be run on a remote (including appropriate selection of "latest" dependencies).  This is to support future decentralised workflows (VIMC-3473)
