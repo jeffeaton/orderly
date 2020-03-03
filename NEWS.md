@@ -1,6 +1,6 @@
 # orderly 1.1.2
 
-* The first of `usethis` inspired functions `orderly::orderly_use_resource()` which can add a resource into the orderly.yml (VIMC-3503)
+* The first of `usethis` inspired functions `orderly::orderly_use_resource()`, `orderly::orderly_use_source()` and `orderly::orderly_use_package()`which can add a resource, source or packages into the orderly.yml (VIMC-3503)
 
 # orderly 1.1.1
 
