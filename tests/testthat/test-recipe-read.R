@@ -607,3 +607,26 @@ test_that("resolve_dependencies_remote", {
     resolve_dependencies_remote(new_report_id(), "example", config, remote),
     "Did not find report 'example:.+' on remote 'default'")
 })
+
+
+test_that("Read partial orderly.yml", {
+  path <- prepare_orderly_example("minimal")
+  p <- orderly_new("partial", root = path, quiet = TRUE)
+  config <- orderly_config(path)
+  expect_message(
+    recipe_read(p, config, develop = TRUE),
+    "At least one artefact required")
+  expect_message(
+    recipe_read(p, config, develop = TRUE),
+    "orderly.yml:script' must be a scalar", fixed = TRUE)
+})
+
+
+test_that("Read completely empty orderly.yml", {
+  path <- prepare_orderly_example("minimal")
+  p <- orderly_new("partial", root = path, quiet = TRUE)
+  file.create(file.path(p, "orderly.yml"))
+  expect_message(
+    recipe_read(p, config, develop = TRUE),
+    "Fields missing from .*: script, artefacts")
+})
